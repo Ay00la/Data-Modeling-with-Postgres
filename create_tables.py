@@ -50,7 +50,7 @@ def drop_table(conn, cur):
     :param cur: cursor to the database
     :param conn: database connection reference
     """
-    for query in create_table_queries:
+    for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
