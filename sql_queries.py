@@ -54,6 +54,10 @@ users_table_drop = """DROP TABLE IF EXISTS users"""
 
 songs_table_drop = """DROP TABLE IF EXISTS songs"""
 
-artists = """DROP TABLE IF EXISTS artists"""
+artists_table_drop = """DROP TABLE IF EXISTS artists"""
 
-time = """DROP TABLE IF EXISTS time"""
+time_table_drop = """DROP TABLE IF EXISTS time"""
+
+create_table_queries = [songplays_table, users_table, songs_table, artists_table, time_table]
+
+drop_table_queries = [songplays_table_drop, users_table_drop, songs_table_drop, artists_table_drop, time_table_drop]
