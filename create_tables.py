@@ -6,11 +6,11 @@ def create_sparkify_db():
     database.
     """
     # connect to default database
-    conn = psycopg2.connect(user = "postgres",
-                            host = "127.0.0.1",
-                            port = "5432",
-                            dbname = "postgre_db",
-                            password = "passryme1")
+    conn = psycopg2.connect("user=postgres \
+                            host=127.0.0.1 \
+                            port=5432 \
+                            dbname=postgre_db \
+                            password=passryme1")
     cur = conn.cursor()
     conn.set_session(autocommit=True)
 
@@ -23,11 +23,11 @@ def create_sparkify_db():
     cur.close()
 
     # connect to sparkify_db
-    conn = psycopg2.connect(user = "postgres",
-                            host = "127.0.0.1",
-                            port = "5432",
-                            dbname = "sparkify_db",
-                            password = "passryme")
+    conn = psycopg2.connect("user=postgres \
+                            host=127.0.0.1 \
+                            port=5432 \
+                            dbname=sparkify_db \
+                            password=passryme1")
     cur = conn.cursor()
 
     return conn, cur
