@@ -9,13 +9,13 @@ def create_sparkify_db():
     conn = psycopg2.connect("user=postgres \
                             host=127.0.0.1 \
                             port=5432 \
-                            dbname=postgre_db \
+                            dbname=postgres_db \
                             password=passryme1")
     cur = conn.cursor()
     conn.set_session(autocommit=True)
 
     # create sparkify_db database
-    cur.execute("""DROP DATABASE IF EXIST sparkify_db""")
+    cur.execute("""DROP DATABASE IF EXISTS sparkify_db""")
     cur.execute("""CREATE DATABASE sparkify_db""")
 
     # close intial connection
@@ -59,7 +59,7 @@ def main():
     """
     Driver main function.
     """
-    create_sparkify_db()
+    conn, cur = create_sparkify_db()
 
     drop_table(conn, cur)
     print("Table dropped successfully!")
