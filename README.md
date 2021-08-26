@@ -1,10 +1,8 @@
 # Data Modeling with Postgres
+A startup called sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to.
 
-## Overview
-
-This project entails modeling of data with Postgres and Python's pandas and psycopg2 library was used to build an ETL pipeline for a startup called Sparkify.
-
-A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to.
+## Project Overview
+This project entails modeling of data with Postgres. Python's pandas and psycopg2 library was used to build an ETL pipeline for Sparkify.
 
 To complete the project, the fact and dimension tables was defined for a star schema which focus on a particular analytic.
 
@@ -69,13 +67,10 @@ user_id, first_name, last_name, gender, level
 **test.ipynb:** a jupyter notebook to connect to postgres database and validate the data loaded.
 
 ## Environment
-Python 3.6 or above
-
-PostgresSQL 9.5 or above
-
-Jupyter notebook
-
-psycopg2 - PostgreSQL database Python wrapper.
+* Python 3.6 or above
+* PostgresSQL 9.5 or above
+* Jupyter notebook
+* psycopg2 - PostgreSQL database Python wrapper.
 
 ## How to run
 The ```create_tables.py``` and ```etl.py``` file should be run independently as below:
