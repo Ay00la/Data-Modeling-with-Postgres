@@ -115,19 +115,30 @@ def main():
     Driver function for loading songs and log data into Postgres database
     """
     # Connect to sparkify_db database
-    conn = psycopg2.connect("user=postgres \
-                            host=127.0.0.1 \
-                            port=5432 \
-                            dbname=sparkify_db \
-                            password=passryme1")
-    cur = conn.cursor()
+    try:
+        conn = psycopg2.connect("user=postgres \
+                                host=127.0.0.1 \
+                                port=5432 \
+                                dbname=sparkify_db \
+                                password=passryme1")
+        cur = conn.cursor()
 
-    # Set autocommit
-    conn.set_session(autocommit=True)
+        # Set autocommit
+        conn.set_session(autocommit=True)
+    except Exception as e:
+        print(e)
 
     # Process data
-    process_data(cur, conn, filepath='data/song_data', func=process_song_file)
-    process_data(cur, conn, filepath='data/log_data', func=process_log_file)
+    try:
+        process_data(cur, conn, filepath='data/song_data', func=process_song_file)
+    except Exception as e:
+        print(e)
+
+    try:
+        process_data(cur, conn, filepath='data/log_data', func=process_log_file)
+    except Exception as e:
+        print(e)
+
     print("Finished processing!!!")
 
     # Close connection and cursor
