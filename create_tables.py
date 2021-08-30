@@ -59,13 +59,23 @@ def main():
     """
     Driver main function.
     """
-    conn, cur = create_sparkify_db()
 
-    drop_table(conn, cur)
-    print("Table dropped successfully!")
+    try:
+        conn, cur = create_sparkify_db()
+    except Exception as e:
+        print(e)
 
-    create_table(conn, cur)
-    print("Table created successfully!")
+    try:
+        drop_table(conn, cur)
+        print("Table dropped successfully!")
+    except Exception as e:
+        print(e)
+
+    try:
+        create_table(conn, cur)
+        print("Table created successfully!")
+    except Exception as e:
+        print(e)
 
     # close connection and cursor
     conn.close()
