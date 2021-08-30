@@ -2,3 +2,4 @@ data/
 *checkpoints/
 *checkpoint.ipynb
 __pycache__/
+etl2.ipynb
