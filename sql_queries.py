@@ -1,5 +1,5 @@
 songplays_table = """CREATE TABLE IF NOT EXISTS songplays(
-    songplay_id SERIAL CONSTRAINT songplay_pk PRIMARY KEY,
+    songplay_id SERIAL PRIMARY KEY,
     start_time TIMESTAMP REFERENCES time (start_time),
     user_id INT REFERENCES users (user_id),
     level VARCHAR NOT NULL,
@@ -11,7 +11,7 @@ songplays_table = """CREATE TABLE IF NOT EXISTS songplays(
 )"""
 
 users_table = """CREATE TABLE IF NOT EXISTS users(
-    user_id INT NOT NULL CONSTRAINT users_pk PRIMARY KEY,
+    user_id INT NOT NULL PRIMARY KEY,
     first_name VARCHAR,
     last_name VARCHAR,
     gender VARCHAR,
@@ -19,7 +19,7 @@ users_table = """CREATE TABLE IF NOT EXISTS users(
 )"""
 
 songs_table = """CREATE TABLE IF NOT EXISTS songs(
-    song_id VARCHAR CONSTRAINT songs_pk PRIMARY KEY ,
+    song_id VARCHAR PRIMARY KEY,
     title VARCHAR,
     artist_id VARCHAR,
     year INT,
@@ -27,7 +27,7 @@ songs_table = """CREATE TABLE IF NOT EXISTS songs(
 )"""
 
 artists_table = """CREATE TABLE IF NOT EXISTS artists(
-    artist_id VARCHAR  CONSTRAINT artist_pk PRIMARY KEY,
+    artist_id VARCHAR PRIMARY KEY,
     artist_name VARCHAR,
     artist_location VARCHAR,
     artist_latitude FLOAT,
@@ -35,7 +35,7 @@ artists_table = """CREATE TABLE IF NOT EXISTS artists(
 )"""
 
 time_table = """CREATE TABLE IF NOT EXISTS time(
-    start_time TIMESTAMP CONSTRAINT time_pk PRIMARY KEY,
+    start_time TIMESTAMP PRIMARY KEY,
     hour INT NOT NULL CHECK (hour >= 0),
     day INT NOT NULL CHECK (day >= 0),
     week INT NOT NULL CHECK (week >= 0),
