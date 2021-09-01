@@ -120,7 +120,7 @@ def main():
                                 host=127.0.0.1 \
                                 port=5432 \
                                 dbname=sparkify_db \
-                                password=passryme1")
+                                password=student")
         cur = conn.cursor()
 
         # Set autocommit

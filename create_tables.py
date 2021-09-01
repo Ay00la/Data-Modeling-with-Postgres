@@ -10,7 +10,7 @@ def create_sparkify_db():
                             host=127.0.0.1 \
                             port=5432 \
                             dbname=postgres_db \
-                            password=passryme1")
+                            password=student")
     cur = conn.cursor()
     conn.set_session(autocommit=True)
 
@@ -27,7 +27,7 @@ def create_sparkify_db():
                             host=127.0.0.1 \
                             port=5432 \
                             dbname=sparkify_db \
-                            password=passryme1")
+                            password=student")
     cur = conn.cursor()
 
     return conn, cur
